@@ -1,50 +1,12 @@
-# React + TypeScript + Vite
+# Proyecto 1 - Tienda Web con carrito
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto forma parte del curso **React y TypeScript - La Guía Completa** de Udemy, impartido por **Juan Pablo De la torre Valdez**. A lo largo de este curso, se desarrollan 10 mini proyectos que ayudan a profundizar en los conocimientos y las posibilidades de React y TypeScript.
 
-Currently, two official plugins are available:
+Este primer proyecto consiste en la implementación de una tienda online con un carrito en el que se pueden añadir y quitar artículos de forma persistente y se puede ver como se actualiza el precio al hacerlo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El objetivo de este curso es aprender los fundamentos de React como el uso de State y los Hooks más comunes como useState y useEffect además de la posibilidad de crear Hooks personalizados como useCart en el caso de este proyecto. 
 
-## Expanding the ESLint configuration
+Además, el proyecto parte de una implementación en JavaScript para posteriormente convertirlo todo a TypeScript y comprender la importancia de definir tipos en los estados, props y funciones, lo que ayuda a prevenir errores y facilita el mantenimiento del código.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
