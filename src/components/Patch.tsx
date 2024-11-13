@@ -1,25 +1,13 @@
+import { Dispatch } from "react";
+import { CartActions } from "../reducers/cart-reducer";
 import type { Patch } from "../types/types";
 
 type PatchProps = {
   patch: Patch;
-  addToCart: (item: Patch) => void;
+  dispatch: Dispatch<CartActions>;
 };
 
-//Sintaxis para tipado en TypeScript
-
-// //Inline Type
-// const Patch = ({
-//   patch,
-//   addToCart,
-// }: {
-//   patch: Patch;
-//   addToCart: (item: Patch) => void;
-// }) => {
-
-//Separate Type
-
-const Patch = ({ patch, addToCart }: PatchProps) => {
-  //Destructuring
+const Patch = ({ patch, dispatch }: PatchProps) => {
   const { name, price, description, image } = patch;
 
   return (
@@ -39,7 +27,9 @@ const Patch = ({ patch, addToCart }: PatchProps) => {
         <button
           type='button'
           className='btn btn-dark w-100'
-          onClick={() => addToCart(patch)}
+          onClick={() =>
+            dispatch({ type: "ADD_TO_CART", payload: { item: patch } })
+          }
         >
           Agregar al Carrito
         </button>
